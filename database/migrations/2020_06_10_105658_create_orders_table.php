@@ -18,8 +18,9 @@ class CreateOrdersTable extends Migration
             $table->integer('vaccine_id');
             $table->integer('user_id');
             $table->string('customer_name');
+            $table->string('customer_address');
             $table->string('customer_phone');
-            $table->string('customer_email');
+            $table->string('customer_email')->nullable();
             $table->integer('quantity');
             $table->double('total');
             $table->integer('state');
