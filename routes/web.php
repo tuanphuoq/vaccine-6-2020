@@ -30,3 +30,6 @@ Route::get('news', function() {
 Route::get('vaccine', function() {
 	return view('pages.vaccine');
 });
+Route::get('vaccine-register', function() {
+	return view('pages.vaccine-register');
+});

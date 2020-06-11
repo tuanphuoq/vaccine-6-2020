@@ -59,7 +59,7 @@
                         <a href="{{asset('')}}news">Tin tức</a>
                     </li>
                     <li>
-                        <a href="">Cẩm nang ti&#234;m chủng</a>
+                        <a href="{{asset('')}}vaccine-register">Đăng ký tiêm chủng</a>
                     </li>
                     <li>
                         <a href="">Dinh dưỡng</a>
