@@ -1,0 +1,491 @@
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+	font-family: 'Avo';
+	src: url('../fonts/UTM-Avo.ttf');
+}
+body,p,span,a,h1,h2,h3,h4,li,span,strong{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+}
+.textwhite{
+	color: #fff;
+}
+.textblue{
+	color: #1976af;
+}
+
+.title-cm{
+	font-size: 40px;
+	font-weight: bold;
+	margin: 60px auto 50px auto; 
+	text-align: center;
+}
+.title-cm a{
+	color: #00984a;
+}
+.title-cm02{
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding: 3px 0;
+    display: block;
+    margin-bottom: 15px;
+}
+.title-cm02 a{
+	background-color: #ffde00;
+	color: #068d8b;
+	padding: 7px 10px 3px 10px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+
+
+/*---------- Header ----------*/
+header{
+	background-color: rgba(232, 232, 232, 0.7);
+}
+.logo {
+	padding:25px 0;
+}
+.nav-top ul li{
+	display: inline-block;
+	position: relative;
+}
+.nav-top ul li a{
+	font-family: 'Avo';
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px 15px;
+	color: #373737;
+}
+.nav-top ul li:last-child a{
+	padding-right: 0;
+}
+.nav-top ul li:hover ul{
+	display: block;
+}
+.ul02{
+    position: absolute;
+    left: 0;
+    width: 300px;
+    background-color: #1976af;
+    top: 43px;
+    z-index: 20;
+	display: none;
+}
+.ul02 li{
+	width: 100%;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #fff;
+}
+.ul02 li:last-child{
+	border-bottom: none;
+}
+.ul02 li a{
+	display: block;
+	width: 100%;
+}
+.ul02 li:hover{
+	background-color: #048B74;
+	transition: all ease 0.3s;
+}
+.btn-cart i{
+	margin-right: 10px;
+	color: #fff;
+}
+.btn-cart{
+	padding: 7px 10px !important;
+	border-radius: 5px;
+	background: #1976af;
+	border:1px solid #717171;
+	color: #fff !important;
+	display: inline-block;
+}
+.btn-cart:hover{
+	color: #fff !important;
+	background: #117ab5;
+	transition: all ease 0.3s;
+}
+.hotline{
+	text-align: right;
+	margin-bottom: 10px;
+}
+.nav-top{
+	background-color: #1976af;
+	width: 100%;
+	height: 45px;
+}
+.nav-top ul,.nav-top li{
+	padding: 0;
+	margin: 0;
+}
+.nav-top ul {
+  text-align: justify;
+}
+.nav-top li {
+  display: inline-block;
+}
+.nav-top li a{
+	display:inline-block;
+	color: #fff !important;
+}
+.nav-top ul:after {
+  content: '';
+  width: 100%; 
+  display: inline-block;
+}
+.nav-right{
+	margin: 45px 0 10px 0;
+}
+
+/*----- Banner -----*/
+.banner img{
+	width: 100%;
+}
+.lower-slope {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.lower-slope .color-outer {
+    background: url('../images/bg04.png') top left repeat #343039;
+    transform: rotate(0deg);
+    padding-top: 30px;
+    padding-bottom: 0;
+    transform-origin: bottom right;
+    min-height: 130px;
+    z-index: 4;
+    position: relative;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.lower-slope .color-middle {
+    background-color: #fcfcfc;
+    transform: rotate(3deg);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transform-origin: 0;
+    min-height: 130px;
+    z-index: 6;
+    position: relative;
+	overflow: hidden;
+}
+.lower-slope .color-inner {
+    background-color: #1976af;
+    transform: rotate(2deg);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transform-origin: top right;
+    min-height: 20px;
+    z-index: 8;
+    margin-top: -16px;
+    position: relative;
+}
+.banner .container .bnr-product{
+	position: absolute;
+	bottom:-85px;
+	right: 0;
+	z-index: 20;
+}
+.banner .container{
+	position: relative;
+}
+.banner .carousel-indicators li{
+	background-color: #717172;
+}
+.carousel-indicators li.active{
+	background-color: #343039;
+}
+
+/*----- End banner -----*/
+/*----- About -----*/
+.video,
+.news,
+.product,
+.about {
+	padding-bottom: 70px;
+}
+.about-content{
+	background: url(../images/about01.png) no-repeat left top,url(../images/about02.png) no-repeat bottom right;
+	padding: 10px 30px;
+}
+.about-main{
+	position: relative;
+    overflow: hidden;
+}
+.about-main > div{
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.btn-block{
+	display: block;
+	margin: 30px 0;
+}
+/*----- End About -----*/
+/*----- Service -----*/
+.service{
+	background: url("../images/dichvu-bg.jpg") repeat top center;
+    padding-bottom: 60px;
+}
+.service-list li p{
+	font-weight: bold;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/*----- Product -----*/
+/*.product{
+	background: url(../images/bg-product.jpg) repeat top center fixed; 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+	background-size: 100%;
+}*/
+.slide02 p{
+	line-height: 20px;
+	font-weight:bold;
+}
+.slide02 li a img{
+	border:1px solid #e1e1e1;
+}
+/*----- End Product -----*/
+/*----- News -----*/
+.news{
+	background: rgba(25, 118, 175, 0.1);
+}
+.news ul li {
+	margin-bottom: 30px;
+}
+.news ul li:nth-child(3n+1){
+	clear: both;
+}
+.news ul li > a{
+	display: block;
+	background: #fff;
+}
+.news ul li > a >div.maxheight{
+	padding: 5px 15px;
+}
+.news ul li h4{
+	color: #121212;
+	font-weight: bold;
+}
+.news ul li p{
+	color: #121212;
+}
+.btn-blue{
+	border-radius: 5px;
+	font-size: 18px;
+	border:1px solid #727272;
+	background: #1976af;
+	padding: 10px 35px;
+	color: #fff;
+	font-weight: bold;
+}
+.btn-blue i{
+	font-size: 16px;
+	margin-left: 5px;
+}
+
+/*----- video -----*/
+.video{
+	background: url(../images/bg05.jpg) repeat center center fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+	background-size: 100%;
+}
+.video img{
+	width: 100%;
+}
+.video-wrap{
+	position: relative;
+	overflow: hidden;
+}
+.video-text a,
+.video-text p{
+	color: #fff;
+	font-size: 13px;
+	line-height: 15px;
+	display: inline-block;
+}
+.video-text{
+	background: #0000008a;
+	padding: 7px 10px;
+	position: absolute;
+	bottom:0;
+	width: 100%;
+}
+.videosmall-list li{
+	margin-bottom: 25px;
+}
+
+/*----- cause -----*/
+.cause{
+	padding-bottom: 50px;
+}
+.cause ul li{
+	margin-bottom: 30px;
+	text-align: center;
+}
+.cause ul li:nth-child(3n+1){
+	clear: both;
+}
+.cause ul li h4{
+	font-weight: bold;
+	font-size: 17px;
+}
+/*----- Footer -----*/
+.f-content01{
+	background: url(../images/bg02.jpg) repeat;
+	padding: 50px 0;
+}
+.list-cm li i,
+.list-cm li a{
+	color: #020202;
+}
+/*
+.list-cm li a:before {
+    content: "\e104";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    padding-right: 0.5em;
+}
+*/
+.f-content02{
+	background: #1976af;
+	padding: 40px 0;
+}
+.f-content02 strong,
+.f-content02 span,
+.f-content02 p{
+	color: #fff;
+}
+.payment img{
+	height: 55px;
+}
+/*----- Mobile -----*/
+.m-logo{
+	padding: 15px;
+}
+.header-m .pull-right{
+	margin: 60px 15px;
+}
+.btn-cart-mb{
+	margin: 0 10px;
+	float: right;
+	margin-right: 70px;
+	margin-top: 60px;
+}
+.ico-menu{
+	position: absolute;
+	right:15px;
+	margin-top: 60px;
+}
+
+@media screen and (max-width:1440px){
+	.bnr-product{
+		width: 50%;
+		bottom: -5vw;
+	}
+}
+@media screen and (max-width:1170px){
+	.nav-top ul li a{
+		padding: 10px 15px;
+	}
+	.about-main > div {
+	    position: inherit;
+	    top: inherit;
+	    left: inherit;
+	    margin-right: 0;
+	    transform: none;
+	}
+}
+
+@media screen and (max-width:1024px){
+	header{
+		display: none;
+	}
+	.nav-mobile{
+		display: block;
+	}
+	.payment img{
+		height: 6vw;
+	}
+	.title-cm{
+		font-size: 35px;
+	}
+	
+}
+
+@media screen and (max-width:767px){
+	.news ul li:nth-child(3n+1) {
+		clear: inherit;
+		float: left;
+	}
+	.news ul li:nth-child(2n+1) {
+			clear: both;
+	}
+	.videosmall-list li{
+		margin: 15px 0;
+	}
+}
+@media screen and (max-width:480px){
+	.title-cm {
+    font-size: 22px;
+		    margin: 40px auto 30px auto;
+}
+	.f-content02 .col-xs-6,
+	.f-content01 .col-xs-6,
+	.news .col-xs-6,
+	.about .col-xs-6{
+		width: 100%;
+		margin: 10px 0;
+	}
+	.lower-slope .color-middle,
+	.lower-slope .color-outer{
+		min-height: 100px;
+	}
+	.cause .col-xs-4{
+		width: 50%;
+	}
+	.cause ul li:nth-child(3n+1) {
+    clear: inherit;
+		float: left;
+}
+	.cause ul li:nth-child(2n+1) {
+    clear: both;
+}
+	.video, .news, .product, .about {
+			padding-bottom: 50px;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
