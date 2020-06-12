@@ -16,21 +16,21 @@
   <body> --}}
 @extends('layouts.master')
 @section('content')
-    <div class="container my-4">
+    <div class="container my-4" style="padding-top: 150px; padding-bottom: 150px; margin: auto;">
         <div class="row direct">
             <div class="col-md-6 text-center">
-                <label for="" style="font-size: 12px; font-style: italic;">Nếu bạn muốn đăng ký tiêm chủng, nhấp nút dưới đây để đăng ký</label>
+                <label for="" style="font-size: 12px; font-style: italic; display: block;">Nếu bạn muốn đăng ký tiêm chủng, nhấp nút dưới đây để đăng ký</label>
                 <button class="btn btn-success btn-lg font-weight-bold" id="btn-register"><i class="fa fa-plus-circle" aria-hidden="true"></i> CHỌN ĐỂ ĐĂNG KÝ TIÊN CHỦNG</button>
             </div>
             <div class="col-md-6 text-center">
-                <label for="" style="font-size: 12px; font-style: italic;">Bạn đã đăng ký và muốn xem thông tin tiêm chủng</label>
+                <label for="" style="font-size: 12px; font-style: italic; display: block;">Bạn đã đăng ký và muốn xem thông tin tiêm chủng</label>
                 <button class="btn btn-info btn-lg font-weight-bold" id="btn-show"><i class="fa fa-eye" aria-hidden="true"></i> XEM THÔNG TIN TIÊM CHỦNG</button>
             </div>
         </div>
     </div>
-    <div class="container my-3" style="visibility: hidden; display: none;" id="form-register">
+    <div class="container my-3" style="visibility: hidden; display: none; padding-bottom: 100px;" id="form-register">
         <div class="title text-center my-5">
-            <h2>ĐĂNG KÝ TIÊM CHỦNG</h2>
+            <h1 class="font-weight-bold" style="font-size: 30px;">ĐĂNG KÝ TIÊM CHỦNG</h1>
         </div>
         <div class="row">
             <div class="col-md-9 form-group font-weight-bold my-3" style="margin: auto;">
@@ -76,9 +76,9 @@
             </div>
         </div>
     </div>
-    <div class="container my-4" style="visibility: hidden; display: none;" id="order-code">
+    <div class="container my-4" style="visibility: hidden; display: none; padding-bottom: 100px;" id="order-code">
         <div class="title text-center my-5">
-            <h2 class="my-5 text-success">ĐĂNG KÝ THÀNH CÔNG</h2>
+            <h2 class="my-5 text-success font-weight-bold" style="font-size: 30px;">ĐĂNG KÝ THÀNH CÔNG</h2>
             <h4 class="d-inline">Mã đơn đăng ký tiêm chủng của khách hàng : </h4> <h4 id="vaccine-order-code" class="text-success d-inline font-weight-bold">005</h4>
             <br>
             <h4 class="d-inline">Chi phí đăng ký tiêm chủng của khách hàng : </h4> <h4 id="order-price" class="text-warning d-inline font-weight-bold">005</h4> <h4 class="font-weight-bold d-inline text-warning">VNĐ</h4>
@@ -92,9 +92,9 @@
             <span class="font-italic d-block my-3">Khách hàng có thể dùng mã đơn đăng ký tiêm chủng trên để kiểm tra thông tin tiêm chủng tại mục "Xem thông tin tiêm chủng"</span>
         </div>
     </div>
-    <div class="container my-3" style="visibility: hidden; display: none;" id="form-info">
+    <div class="container my-3" style="visibility: hidden; display: none; padding-bottom: 100px;" id="form-info">
         <div class="title text-center my-5">
-            <h2>THÔNG TIN TIÊM CHỦNG</h2>
+            <h2 class="font-weight-bold" style="font-size: 30px;">THÔNG TIN TIÊM CHỦNG</h2>
         </div>
         <div class="row">
             <div class="col-md-9 form-group font-weight-bold my-3" style="margin: auto;">
@@ -144,7 +144,7 @@
                 'visibility': 'hidden',
                 'display': 'none'
             });
-            $('#vaccine-info').css({
+            $('#order-code').css({
                 'visibility': 'hidden',
                 'display': 'none'
             });

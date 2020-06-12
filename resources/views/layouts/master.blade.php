@@ -10,6 +10,7 @@
     <meta property="fb:app_id" content="673483492848549" />
     <title>Dịch vụ ti&#234;m chủng v&#224; tư vấn dinh dưỡng</title>
     <link rel="stylesheet" href="{{asset('Content/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('Content/css/common.css?vs=06')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('Content/css/jquery.mmenu.all.css')}}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -30,7 +31,7 @@
     <header>
         <div class="container">
             <div class="logo pull-left">
-                <a href="{{asset('')}}"><img src="{{asset('Content/images/logo-top.png')}}" alt="Tiêm chủng"></a>
+                <a href="{{asset('')}}"><img src="Images/avt-vaccine.png" alt="Tiêm chủng"></a>
             </div>
             <div class="pull-right nav-right">
                 <ul class="list-inline">
@@ -117,8 +118,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="/" style="display:block; margin-top: 20px;"><img src="{{asset('Content/images/logo-f.png?vs=01')}}" alt="Tiêm chủng"></a><br>
-                        <strong>CÔNG TY CỔ PHẦN DINH DƯỠNG VÀ SỨC KHỎE - THE SUN</strong>
+                        <a href="/" style="display:block; margin-top: 20px;"><img src="Images/avt-vaccine.png" alt="Tiêm chủng"></a><br>
+                        <strong>CÔNG TY CỔ PHẦN DINH DƯỠNG VÀ SỨC KHỎE - VNVC</strong>
                         <p>
                             Địa chỉ: A12 Tòa CT2A - Khu Đô thị Tân Tây Đô, Tân Lập, Đan Phượng, HN (mặt đường QL32)<br>
                             Tel: <span style="font-size: 17px; font-weight: bold;">1900636036</span><br>
