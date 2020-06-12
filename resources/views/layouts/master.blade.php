@@ -2,9 +2,12 @@
 <html lang="vi" prefix="og: http://ogp.me/ns#" class="no-js">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="REFRESH" content="1800">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
     <meta content="INDEX,FOLLOW" name="robots" />
     <link rel="shortcut icon" href="{{asset('Content/images/logo.png')}}" />
     <meta property="fb:app_id" content="673483492848549" />
@@ -22,6 +25,7 @@
     @yield('css')
 </head>
 <body>
+    
     <script src="{{asset('Content/js/jquery.min.js')}}"></script>
     <script src="{{asset('Content/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('Content/js/jquery.mmenu.min.all.js')}}"></script>

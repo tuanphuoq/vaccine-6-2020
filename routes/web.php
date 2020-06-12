@@ -30,9 +30,9 @@ Route::get('news', function() {
 Route::get('vaccine', function() {
 	return view('pages.vaccine');
 });
-Route::get('vaccine-register', function() {
-	return view('pages.vaccine-register');
-});
+Route::get('vaccine-register', 'CustomerController@registerView');
+Route::post('post-register', 'CustomerController@registerPost');
+Route::get('get-register', 'CustomerController@registerGet');
 Auth::routes();
 
 Route::group(['middleware'=>'auth'], function(){
