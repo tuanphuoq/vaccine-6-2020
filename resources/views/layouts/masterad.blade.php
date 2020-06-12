@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Vaccine - Admin Page</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="{{asset('../css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('../css/AdminLTE.min.css')}}">
+  <link rel="stylesheet" href="{{asset('../css/_all-skins.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{asset('../css/toastr.min.css')}}">
+  @yield('css')
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <header class="main-header">
+      <a class="logo">
+        <span class="logo-mini"><b>VC</b></span>
+        <span class="logo-lg"><b>Vaccine</b></span>
+      </a>
+      <nav class="navbar navbar-static-top">
+        <a class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+              <a class="dropdown-toggle" data-toggle="dropdown">
+                <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" class="user-image" alt="User Image">
+                <span class="hidden-xs">{{Auth::user()->fullname}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="user-header">
+                  <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" class="img-circle" alt="User Image">
+                  <p>
+                    {{Auth::user()->fullname}}
+                  </p>
+                </li>
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a class="btn btn-default btn-flat">Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="{{route('logout')}}" class="btn btn-default btn-flat" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout</a>
+                  </div>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" class="user-image" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <span class="hidden-xs">{{Auth::user()->fullname}} 
+            </span>
+          </div>
+        </div>
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">Main Navigation</li>
+          <li class="treeview">
+            <a>
+              <i class="fa fa-book"></i> <span>Home</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a><i class="fa fa-circle-o"></i> Home</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a>
+              <i class="fa fa-dashboard"></i> <span>Home</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href=""><i class="fa fa-circle-o"></i> Home</a></li>
+              <li><a href=""><i class="fa fa-circle-o"></i> Home</a></li>
+            </ul>
+          </li>
+          <li class="">
+            <a href="">
+              <i class="fa fa-circle-o" aria-hidden="true"></i> <span>Home</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> <span>Home</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper">
+      <section class="content-header">
+        <h1>
+          Table
+        </h1>
+        <ol class="breadcrumb">
+          <li><a><i class="fa fa-dashboard"></i> Home</a></li>
+          <li><a>Table</a></li>
+        </ol>
+      </section>
+      <section class="content">
+        @yield('content')
+      </section>
+    </div>
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+      </div>
+      <strong>Copyright &copy; 2020<a> Vaccine</a>.</strong> Reserved
+    </footer>
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <script src="{{asset('../js/jquery.min.js')}}"></script>
+  <script src="{{asset('../js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('../js/jquery.slimscroll.min.js')}}"></script>
+  <script src="{{asset('../js/fastclick.js')}}"></script>
+  <script src="{{asset('../js/adminlte.min.js')}}"></script>
+  <script src="{{asset('../js/demo.js')}}"></script>
+  <script src="{{asset('../js/toastr.min.js')}}"></script>
+  @yield('foot')
+</body>
+</html>

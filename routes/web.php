@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/welcome', function () {
-    return view('welcome');
+	return view('test');
 });
 
 Route::get('', function() {
@@ -32,4 +32,13 @@ Route::get('vaccine', function() {
 });
 Route::get('vaccine-register', function() {
 	return view('pages.vaccine-register');
+});
+Auth::routes();
+
+Route::group(['middleware'=>'auth'], function(){
+	Route::prefix('admin')->group(function(){
+		Route::get('/', function(){
+			return view('admin.dashboard');
+		});
+	});
 });
