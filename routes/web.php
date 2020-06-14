@@ -27,9 +27,8 @@ Route::get('price-list', function() {
 Route::get('news', function() {
 	return view('pages.news');
 });
-Route::get('vaccine', function() {
-	return view('pages.vaccine');
-});
+Route::get('vaccine', 'VaccineController@getVaccine');
+Route::post('/upload', 'VaccineController@uploadImg');
 Route::get('vaccine-register', 'CustomerController@registerView');
 Route::post('post-register', 'CustomerController@registerPost');
 Route::get('get-register', 'CustomerController@registerGet');
@@ -39,6 +38,13 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::prefix('admin')->group(function(){
 		Route::get('/', function(){
 			return view('admin.dashboard');
+		});
+		Route::prefix('vaccine')->group(function(){
+			Route::get('', 'VaccineController@allVaccine');
+			Route::get('create', 'VaccineController@create');
+			Route::post('store', 'VaccineController@store');
+			Route::get('/edit/{id}', 'VaccineController@edit');
+			Route::post('/update/{id}', 'VaccineController@update');
 		});
 	});
 });

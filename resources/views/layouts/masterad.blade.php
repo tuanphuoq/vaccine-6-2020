@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="{{asset('../css/_all-skins.min.css')}}">
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{asset('../css/toastr.min.css')}}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css"/>
   @yield('css')
   <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -75,13 +77,13 @@
           <li class="header">Main Navigation</li>
           <li class="treeview">
             <a>
-              <i class="fa fa-book"></i> <span>Home</span>
+              <i class="fa fa-thermometer-empty" aria-hidden="true"></i> <span>Vaccine</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a><i class="fa fa-circle-o"></i> Home</a></li>
+              <li><a href="{{asset('')}}admin/vaccine"><i class="fa fa-circle-o"></i> Vaccine</a></li>
             </ul>
           </li>
           <li class="treeview">
@@ -137,6 +139,8 @@
   <script src="{{asset('../js/adminlte.min.js')}}"></script>
   <script src="{{asset('../js/demo.js')}}"></script>
   <script src="{{asset('../js/toastr.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script>
   @yield('foot')
 </body>
 </html>

@@ -11,109 +11,24 @@
         <div class="row news-page-content mt20">
             <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="row">
+                    @if (count($vaccines)>0)
+                    @foreach ($vaccines as $vaccine)
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div class="box-ck">
-                            <a href="/tin-tuc/t29/synflorix--vac-xin-ngua-phe-cau.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image.jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="SYNFLORIX - Vắc xin ngừa phế cầu">
+                            <a href="">
+                                <img src="{{ asset(\Storage::url($vaccine->image)) }}" alt="">
                             </a>
                             <div class="box-title">
-                                <a href="/tin-tuc/t29/synflorix--vac-xin-ngua-phe-cau.html">SYNFLORIX - Vắc xin ngừa phế cầu</a>
+                                <a href="">{{$vaccine->name}}</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t28/vac-xin-phong-viem-mang-nao-do-nao-mo-cau-b-c.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(2).jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin ph&#242;ng vi&#234;m m&#224;ng n&#227;o do n&#227;o m&#244; cầu B+C">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t28/vac-xin-phong-viem-mang-nao-do-nao-mo-cau-b-c.html">Vắc xin ph&#242;ng vi&#234;m m&#224;ng n&#227;o do n&#227;o m&#244; cầu B+C</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t27/vac-xin-phong-viem-nao-nhat-ban.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(1).jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin ph&#242;ng Vi&#234;m n&#227;o Nhật Bản">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t27/vac-xin-phong-viem-nao-nhat-ban.html">Vắc xin ph&#242;ng Vi&#234;m n&#227;o Nhật Bản</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t25/tetraxim--vac-xin-4-trong-1.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image3942.jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="TETRAXIM - Vắc xin 4 trong 1">
-                            </a>
-                            <div class="box-title">
-                                <a href="tin-tuc/t25/tetraxim--vac-xin-4-trong-1.html">TETRAXIM - Vắc xin 4 trong 1</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t23/vac-xin-6-trong-1.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(6).jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin 6 trong 1">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t23/vac-xin-6-trong-1.html">Vắc xin 6 trong 1</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t22/vac-xin-3-trong-1-phong-soi--quai-bi--rubella.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(4)8819.jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin 3 trong 1 ph&#242;ng Sởi - Quai bị - Rubella">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t22/vac-xin-3-trong-1-phong-soi--quai-bi--rubella.html">Vắc xin 3 trong 1 ph&#242;ng Sởi - Quai bị - Rubella</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t21/vac-xin-phong-tieu-chay-do-rota-virus.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(2).jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin ph&#242;ng ti&#234;u chảy do Rota Virus">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t21/vac-xin-phong-tieu-chay-do-rota-virus.html">Vắc xin ph&#242;ng ti&#234;u chảy do Rota Virus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t20/vac-xin-phong-lao.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(1)542.jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin ph&#242;ng Lao">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t20/vac-xin-phong-lao.html">Vắc xin ph&#242;ng Lao</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t12/vac-xin-phong-viem-gan-b.html">
-                                <img src="Images/Upload/User/quantri/2019/7/image_(7)9730.jpeg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin ph&#242;ng Vi&#234;m gan B">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t12/vac-xin-phong-viem-gan-b.html">Vắc xin ph&#242;ng Vi&#234;m gan B</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div class="box-ck">
-                            <a href="/tin-tuc/t10/vac-xin-phong-dai.html">
-                                <img src="Images/Upload/User/quantri/2019/5/verorab-300x199.jpg?w=800&h=531&mode=crop" class="img-responsive" alt="Vắc xin ph&#242;ng dại">
-                            </a>
-                            <div class="box-title">
-                                <a href="/tin-tuc/t10/vac-xin-phong-dai.html">Vắc xin ph&#242;ng dại</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
                 <div class="text-center mt20">
                     <ul class="pagination">
+                        {{$vaccines->links()}}
                     </ul>
                 </div>
             </div><!-- end col-md-8-->

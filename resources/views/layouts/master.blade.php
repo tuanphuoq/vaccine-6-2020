@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
     <meta content="INDEX,FOLLOW" name="robots" />
     <link rel="shortcut icon" href="{{asset('Content/images/logo.png')}}" />
     <meta property="fb:app_id" content="673483492848549" />
@@ -50,15 +49,12 @@
                 <ul>
                     <li>
                         <a href="{{asset('')}}">Giới thiệu</a>
-                        <ul  class='ul02'>  <li><a  href="">Về công ty</a></li> <li><a  href="">Tầm nhìn</a></li> <li><a  href="">Sứ mệnh</a></li> <li><a  href="">Mục tiêu chất lượng</a></li> <li><a  href="">Đội ngũ chuyên gia</a></li></ul>
                     </li>
                     <li>
                         <a href="{{asset('')}}vaccine">Vắc xin</a>
-                        <ul  class='ul02'>  <li><a  href="">Danh mục sản phẩm</a></li> <li><a  href="">Danh mục vắc xin hiện có</a></li></ul>
                     </li>
                     <li>
                         <a href="">Dịch vụ g&#243;i ti&#234;m</a>
-                        <ul  class='ul02'>  <li><a  href="">Tiêm chủng trọn gói</a></li> <li><a  href="">Gói Vacxin trẻ em</a></li> <li><a  href="">Gói Vacxin người lớn</a></li> <li><a  href="">Tiêm chúng theo yêu cầu</a></li></ul>
                     </li>
                     <li>
                         <a href="{{asset('')}}news">Tin tức</a>
@@ -68,7 +64,6 @@
                     </li>
                     <li>
                         <a href="">Dinh dưỡng</a>
-                        <ul  class='ul02'>  <li><a  href="">Sản phẩm dinh dưỡng</a></li> <li><a  href="">Dịch vụ tư vấn dinh dưỡng</a></li> <li><a  href="">Cẩm nang dinh dưỡng</a></li></ul>
                     </li>
                     <li>
                         <a href="{{asset('')}}price-list">Bảng gi&#225;</a>
