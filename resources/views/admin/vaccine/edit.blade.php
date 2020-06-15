@@ -4,7 +4,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h2 style="text-align: center;">Add vaccine</h2>
+        <h2 style="text-align: center;">Edit vaccine</h2>
       </div>
       <div class="box-body">
         <div class="container">

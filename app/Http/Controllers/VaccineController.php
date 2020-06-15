@@ -40,7 +40,7 @@ class VaccineController extends Controller
 		if ($vaccine == null){
 			return abort(404);
 		}
-		else{
+		else {
 			return view('admin.vaccine.edit', ['vaccine' => $vaccine]);
 		}	
 	}

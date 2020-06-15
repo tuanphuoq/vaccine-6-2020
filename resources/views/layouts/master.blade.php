@@ -34,7 +34,7 @@
     <header>
         <div class="container">
             <div class="logo pull-left">
-                <a href="{{asset('')}}"><img src="Images/avt-vaccine.png" alt="Tiêm chủng"></a>
+                <a href="{{asset('')}}"><img src="{{asset('Images/avt-vaccine.png')}}" alt="Tiêm chủng"></a>
             </div>
             <div class="pull-right nav-right">
                 <ul class="list-inline">
@@ -117,7 +117,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="/" style="display:block; margin-top: 20px;"><img src="Images/avt-vaccine.png" alt="Tiêm chủng"></a><br>
+                        <a href="/" style="display:block; margin-top: 20px;"><img src="{{asset('Images/avt-vaccine.png')}}" alt="Tiêm chủng"></a><br>
                         <strong>CÔNG TY CỔ PHẦN DINH DƯỠNG VÀ SỨC KHỎE - VNVC</strong>
                         <p>
                             Địa chỉ: A12 Tòa CT2A - Khu Đô thị Tân Tây Đô, Tân Lập, Đan Phượng, HN (mặt đường QL32)<br>

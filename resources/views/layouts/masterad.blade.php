@@ -141,6 +141,7 @@
   <script src="{{asset('../js/toastr.min.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script>
+  <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
   @yield('foot')
 </body>
 </html>
