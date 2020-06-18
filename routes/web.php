@@ -26,7 +26,7 @@ Route::get('price-list', function() {
 });
 Route::get('news', 'PostController@allPost');
 Route::get('news/{id}', 'PostController@show');
-Route::get('vaccine', 'VaccineController@getVaccine');
+Route::get('vaccine', 'VaccineController@getVaccine')->name('vaccine');
 Route::post('/upload', 'VaccineController@uploadImg');
 Route::get('vaccine-register', 'CustomerController@registerView');
 Route::post('post-register', 'CustomerController@registerPost');
