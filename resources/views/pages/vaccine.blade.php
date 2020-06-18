@@ -16,7 +16,11 @@
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div class="box-ck">
                             <a href="">
+                                @if ($vaccine->image == null)
+                                <img src="https://increasify.com.au/wp-content/uploads/2016/08/default-image.png">
+                                @else
                                 <img src="{{ asset(\Storage::url($vaccine->image)) }}" alt="">
+                                @endif
                             </a>
                             <div class="box-title">
                                 <a href="">{{$vaccine->name}}</a>
