@@ -36,7 +36,7 @@
              @else
              <td>{{\App\User::find($value->user_id)->fullname}}</td>
              @endif
-             <td>{{\App\Vaccine::find($value->vaccine_id)->pluck('name')->first()}}</td>
+             <td>{{\App\Vaccine::where('id', $value->vaccine_id)->value('name')}}</td>
              <td>{{$value->customer_name}}</td>
              <td>{{$value->customer_address}}</td>
              <td>{{$value->customer_phone}}</td>
