@@ -43,13 +43,7 @@
                     <li><a href="">Tại sao phải ti&#234;m vắc xin c&#250;m nhắc lại h&#224;ng năm?</a></li>
                 </ul>
             </div>
-           {{--  <ul class="bnr-linkhot ">
-                <li class="col-md-12 col-sm-6 col-xs-12"><a rel="nofollow" target="_blank"><img src="/Images/Upload/User/quantri/2019/5/banner3.jpg"></a></li>
-                <li class="col-md-12 col-sm-6 col-xs-12"><a rel="nofollow" target="_blank"><img src="/Images/Upload/User/quantri/2019/5/banner4.jpg"></a></li>
-                <li class="col-md-12 col-sm-6 col-xs-12"><a rel="nofollow" target="_blank"><img src="/Images/Upload/User/quantri/2019/5/banner1.jpg"></a></li>
-                <li class="col-md-12 col-sm-6 col-xs-12"><a rel="nofollow" target="_blank"><img src="/Images/Upload/User/quantri/2019/5/banner2.jpg"></a></li>
-            </ul> --}}
         </div>
-    </div><!-- end content-->
+    </div>
 </div>
  @endsection

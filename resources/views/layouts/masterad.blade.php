@@ -88,24 +88,23 @@
           </li>
           <li class="treeview">
             <a>
-              <i class="fa fa-dashboard"></i> <span>Home</span>
+              <i class="fa fa-dashboard"></i> <span>Post</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href=""><i class="fa fa-circle-o"></i> Home</a></li>
-              <li><a href=""><i class="fa fa-circle-o"></i> Home</a></li>
+              <li><a href="{{asset('')}}admin/post"><i class="fa fa-circle-o"></i> Post</a></li>
             </ul>
           </li>
           <li class="">
-            <a href="">
-              <i class="fa fa-circle-o" aria-hidden="true"></i> <span>Home</span>
+            <a href="{{asset('')}}admin/order">
+              <i class="fa fa-circle-o" aria-hidden="true"></i> <span>Order</span>
             </a>
           </li>
           <li class="">
-            <a href="">
-              <i class="fa fa-bar-chart" aria-hidden="true"></i> <span>Home</span>
+            <a href="{{asset('')}}admin/user">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> <span>User Manager</span>
             </a>
           </li>
         </ul>

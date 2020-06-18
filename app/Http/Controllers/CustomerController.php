@@ -23,7 +23,8 @@ class CustomerController extends Controller
     	$order['customer_email'] = $req->customerEmail;
     	$order['customer_phone'] = $req->customerPhone;
     	$order['quantity'] = $req->quantity;
-    	$order['total'] = $req->total;
+        $price = Vaccine::find($req->vaccineId)->late_price;
+    	$order['total'] = ($req->quantity)*$price;
     	$order['state'] = $req->state;
     	$codeReturn = Order::max('id') + 1;
     	Order::Create($order);
