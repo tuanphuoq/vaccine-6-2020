@@ -19,7 +19,7 @@
 </div><!-- end banner-->
 <div class="about">
     <div class="container">
-        <h2 class="title-cm textblue">Giới thiệu về hệ thống ti&#234;m chủng The Sun Care</h2>
+        <h2 class="title-cm textblue">Giới thiệu về hệ thống ti&#234;m chủng The Mom’s Care</h2>
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6 maxheight03">
                 <img src="Content/images/about-img.jpg" alt="giới thiệu">
@@ -27,7 +27,7 @@
             <div class="col-md-6 col-sm-6 col-xs-6 maxheight03 about-main">
                 <div>
                     <p class="about-content">
-                        Hệ thống tiêm chủng The Suncare (thuộc Công ty Cổ phần dinh dưỡng và sức khỏe The Sun) chính thức đi vào hoạt động từ tháng 5 năm 2019. Trong bối cảnh thế giới đang phải đương đầu với tình trạng biến đổi phức tạp của các chủng vi khuẩn gây bệnh cũng như sự thiếu hụt vắc xin tại Việt Nam như hiện nay, Hệ thống tiêm chủng The Suncare ra đời nhằm cung cấp cho trẻ em Việt Nam những loại vắc xin có chất lượng tốt nhất cùng với hệ thống phòng tiêm chủng an toàn, hiện đại và cao cấp.<br>
+                        Hệ thống tiêm chủng The Suncare (thuộc Công ty Cổ phần dinh dưỡng và sức khỏe The Mom’s Care) chính thức đi vào hoạt động từ tháng 5 năm 2019. Trong bối cảnh thế giới đang phải đương đầu với tình trạng biến đổi phức tạp của các chủng vi khuẩn gây bệnh cũng như sự thiếu hụt vắc xin tại Việt Nam như hiện nay, Hệ thống tiêm chủng The Suncare ra đời nhằm cung cấp cho trẻ em Việt Nam những loại vắc xin có chất lượng tốt nhất cùng với hệ thống phòng tiêm chủng an toàn, hiện đại và cao cấp.<br>
                     </p>
                     <a class="text-center btn-block" href="">
                         <span class="btn-blue">Xem thêm <i class="fa">&#xf101;</i></span>

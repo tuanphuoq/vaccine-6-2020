@@ -35,6 +35,7 @@
         <div class="container">
             <div class="logo pull-left">
                 <a href="{{asset('')}}"><img src="{{asset('Images/avt-vaccine.png')}}" alt="Tiêm chủng"></a>
+                <h1 style="display: inline-block; font-size: 35px; color:#1976af" class="font-weight-bold">- The Mom’s Care</h1>
             </div>
             <div class="pull-right nav-right">
                 <ul class="list-inline">
@@ -75,7 +76,7 @@
     <div class="nav-mobile">
         <div class="header-m">
             <a href="/">
-                <img src="{{asset('Content/images/logo-top.png')}}" alt="Tiêm chủng" class="m-logo pull-left">
+                <img src="{{asset('Images/avt-vaccine.png')}}" alt="Tiêm chủng" class="m-logo pull-left">
             </a>
             <a href="#menu" style="display: block; width: 100%;">
                 <img src="{{asset('Content/images/ico-menu.png')}}" class="ico-menu">
@@ -118,7 +119,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <a href="/" style="display:block; margin-top: 20px;"><img src="{{asset('Images/avt-vaccine.png')}}" alt="Tiêm chủng"></a><br>
-                        <strong>CÔNG TY CỔ PHẦN DINH DƯỠNG VÀ SỨC KHỎE - VNVC</strong>
+                        <strong>CÔNG TY CỔ PHẦN DINH DƯỠNG VÀ SỨC KHỎE - VNVC - The Mom’s Care</strong>
                         <p>
                             Địa chỉ: A12 Tòa CT2A - Khu Đô thị Tân Tây Đô, Tân Lập, Đan Phượng, HN (mặt đường QL32)<br>
                             Tel: <span style="font-size: 17px; font-weight: bold;">1900636036</span><br>

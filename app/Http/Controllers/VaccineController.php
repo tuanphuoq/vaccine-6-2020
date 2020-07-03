@@ -54,7 +54,7 @@ class VaccineController extends Controller
 	}
 
 	public function getVaccine() {
-		$vaccines = Vaccine::paginate(10);
+		$vaccines = Vaccine::where('active', '=', 1)->paginate(10);
 		return view('pages.vaccine', ['vaccines' => $vaccines]);
 	}
 }
