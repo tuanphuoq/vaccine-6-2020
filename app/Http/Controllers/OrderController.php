@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Vaccine;
+use App\Answer;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,10 @@ class OrderController extends Controller
 {
 	public function getOrder() {
 		$orders = Order::paginate(10);
+		foreach ($orders as $item) {
+			$item->isAnswer = Answer::where('order_id', $item->id)->count() > 0 ? true : false;
+		}
+		// dd($orders);
 		return view('admin.order.order', ['orders' => $orders]);
 	}
 

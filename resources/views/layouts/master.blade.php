@@ -55,9 +55,6 @@
                         <a href="{{asset('')}}vaccine">Vắc xin</a>
                     </li>
                     <li>
-                        <a href="">Dịch vụ g&#243;i ti&#234;m</a>
-                    </li>
-                    <li>
                         <a href="{{asset('')}}news">Tin tức</a>
                     </li>
                     <li>

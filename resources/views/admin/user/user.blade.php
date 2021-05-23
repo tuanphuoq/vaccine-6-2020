@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
-      <div class="box-header">
-        <h3 class="box-title">Table</h3>
+      <div class="box-header table-header">
+        <h3 class="box-title">Quản lý người dùng hệ thống</h3>
       </div>
       <div class="box-body">
        <a href="{{asset('')}}admin/user/create" class="btn btn-sm btn-success">Add</a>
@@ -36,9 +36,13 @@
            <td>Employee</td>
             @endif
            <td>
-            <a class="btn btn-success btn-change" data-toggle="modal" href='#modal-id' data-id="{{$user->id}}">Change Role</a>
+             @if($user->role != 1)
+              <a class="btn btn-success btn-change" data-toggle="modal" href='#modal-id' data-id="{{$user->id}}">Change Role</a>
+              @endif
              <a href="{{asset('')}}admin/user/edit/{{$user->id}}" class="btn btn-warning">Edit</a>
+             @if($user->role != 1)
              <button class="btn btn-danger btn-delete" data-id={{$user->id}}>Delete</button>
+             @endif
            </td>
            </tr>
           

@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
-      <div class="box-header">
-        <h3 class="box-title">Table</h3>
+      <div class="box-header table-header">
+        <h3 class="box-title">Quản lý trang thông tin</h3>
       </div>
       <div class="box-body">
        <a href="{{asset('')}}admin/post/create" class="btn btn-sm btn-success">Add</a>

@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
-      <div class="box-header">
-        <h3 class="box-title">Table</h3>
+      <div class="box-header table-header">
+        <h3 class="box-title">Quản lý đăng ký tiêm chủng</h3>
       </div>
       <div class="box-body">
        <a href="{{asset('')}}admin/order/create" class="btn btn-sm btn-success">Add</a>
@@ -12,18 +12,20 @@
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
-              <th>Code</th>
-              <th>Seller</th>
+              <th>Mã</th>
+              <th>Người xác nhận</th>
+              <th>Khách hàng</th>
+              <th>Địa chỉ</th>
+              <th>Phone</th>
+              <th>Email</th>
               <th>Vaccine</th>
-              <th>Name Customer</th>
-              <th>Customer Address</th>
-              <th>Customer Phone</th>
-              <th>Customer Email</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>State</th>
-              <th>Datetime</th>
-              <th>Action</th>
+              <th>Số lượng</th>
+              <th>Tổng tiền</th>
+              <th>Trạng thái</th>
+              <th>Ngày tiêm</th>
+              <th>Giờ tiêm</th>
+              <th>Khai báo y tế</th>
+              <th>Tác vụ</th>
             </tr>
           </thead>
           <tbody>
@@ -36,11 +38,11 @@
              @else
              <td>{{\App\User::find($value->user_id)->fullname}}</td>
              @endif
-             <td>{{\App\Vaccine::where('id', $value->vaccine_id)->value('name')}}</td>
              <td>{{$value->customer_name}}</td>
              <td>{{$value->customer_address}}</td>
              <td>{{$value->customer_phone}}</td>
              <td>{{$value->customer_email}}</td>
+             <td>{{\App\Vaccine::where('id', $value->vaccine_id)->value('name')}}</td>
              <td>{{$value->quantity}}</td>
              <td>{{number_format($value->total)}}</td>
              @if ($value->state == 0)
@@ -48,7 +50,15 @@
              @else
              <td>Đã thanh toán</td>
              @endif
-             <td>{{$value->created_at}}</td>
+             <td>{{$value->join_date}}</td>
+             <td>{{$value->join_time}}</td>
+             <td>
+              @if ($value->isAnswer)
+                <a href="{{route('admin.template.answerTemplate', ['order_id' => $value->id])}}" target="_blank" rel="noopener noreferrer">Xem khai báo</a>
+              @else
+                <span class="text-danger">Chưa khai báo</span>
+              @endif
+             </td>
              <td>
               <a class="btn btn-warning btn-change" data-toggle="modal" href='#modal-id' data-id="{{$value->id}}">Change State</a>
               <a href="{{asset('')}}admin/order/edit/{{$value->id}}" class="btn btn-danger btn-edit" data-id="{{$value->id}}">Edit</a>

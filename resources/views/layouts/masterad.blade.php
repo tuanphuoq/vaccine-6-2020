@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{asset('../css/toastr.min.css')}}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="{{asset('../css/custom.css')}}">
   @yield('css')
   <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -45,12 +46,12 @@
                   </p>
                 </li>
                 <li class="user-footer">
-                  <div class="pull-left">
+                  {{-- <div class="pull-left">
                     <a class="btn btn-default btn-flat">Profile</a>
-                  </div>
+                  </div> --}}
                   <div class="pull-right">
                     <a href="{{route('logout')}}" class="btn btn-default btn-flat" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Logout</a>
+                    document.getElementById('logout-form').submit();">Đăng xuất</a>
                   </div>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -74,10 +75,15 @@
           </div>
         </div>
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">Main Navigation</li>
+          <li class="header">Danh sách chức năng</li>
+          <li class="">
+            <a href="{{asset('')}}admin/user">
+              <i class="fa fa-users" aria-hidden="true"></i> <span>Quản lý người dùng</span>
+            </a>
+          </li>
           <li class="treeview">
             <a>
-              <i class="fa fa-thermometer-empty" aria-hidden="true"></i> <span>Vaccine</span>
+              <i class="fa fa-eyedropper" aria-hidden="true"></i> <span>Quản lý Vaccine</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -88,30 +94,35 @@
           </li>
           <li class="treeview">
             <a>
-              <i class="fa fa-dashboard"></i> <span>Post</span>
+              <i class="fa fa-rss" aria-hidden="true"></i> <span>Quản lý thông tin</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="{{asset('')}}admin/post"><i class="fa fa-circle-o"></i> Post</a></li>
+              <li><a href="{{asset('')}}admin/post"><i class="fa fa-circle-o"></i> Bài viết</a></li>
             </ul>
           </li>
           <li class="">
             <a href="{{asset('')}}admin/order">
-              <i class="fa fa-circle-o" aria-hidden="true"></i> <span>Order</span>
+              <i class="fa fa-cart-plus" aria-hidden="true"></i> <span>Đăng ký tiêm chủng</span>
             </a>
           </li>
           <li class="">
-            <a href="{{asset('')}}admin/user">
-              <i class="fa fa-bar-chart" aria-hidden="true"></i> <span>User Manager</span>
+            <a href="{{asset('')}}admin/import-vaccine">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i> <span>Bổ sung vaccine</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="{{asset('')}}admin/template">
+              <i class="fa fa-file-text" aria-hidden="true"></i> <span>Mẫu khai báo</span>
             </a>
           </li>
         </ul>
       </section>
     </aside>
     <div class="content-wrapper">
-      <section class="content-header">
+      {{-- <section class="content-header">
         <h1>
           Table
         </h1>
@@ -119,7 +130,7 @@
           <li><a><i class="fa fa-dashboard"></i> Home</a></li>
           <li><a>Table</a></li>
         </ol>
-      </section>
+      </section> --}}
       <section class="content">
         @yield('content')
       </section>

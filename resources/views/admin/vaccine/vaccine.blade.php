@@ -3,24 +3,25 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
-      <div class="box-header">
-        <h3 class="box-title">Table</h3>
+      <div class="box-header table-header">
+        <h3 class="box-title">Quản lý vaccine</h3>
       </div>
       <div class="box-body">
-       <a href="{{asset('')}}admin/vaccine/create" class="btn btn-sm btn-success">Add</a>
+       <a href="{{asset('')}}admin/vaccine/create" class="btn btn-sm btn-success">Thêm mới vaccine</a>
        <div class="table-responsive">
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
               <th>#</th>
-              <th>Name</th>
-              <th>Origin</th>
-              <th>Allocate</th>
+              <th>Tên vaccine</th>
+              <th>Nguồn gốc</th>
+              <th>Chỉ định</th>
               <th>Reser Price</th>
               <th>Late Price</th>
-              <th>Active</th>
-              <th>Image</th>
-              <th>Action</th>
+              <th>Số lượng</th>
+              <th>Trạng thái</th>
+              <th>Ảnh minh họa</th>
+              <th>Tác vụ</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +34,13 @@
               <td>{{$value->allocate}}</td>
               <td>{{number_format($value->reser_price)}} VND</td>
               <td>{{number_format($value->late_price)}} VND</td>
+              @if (isset($value->quantity) && $value->quantity < 100)
+              <td style="color: red;">
+              @else
+              <td>
+              @endif
+                {{$value->quantity}}
+              </td>
               @if ($value->active==1)
               <td>Đang được sử dụng</td>
               @else
@@ -44,8 +52,8 @@
               <td><img style="width: 50px; height: 50px;" src="{{ asset(\Storage::url($value->image)) }}"></td>
               @endif
               <td>
-                <a class="btn btn-sm btn-primary add-img" href="#modal-img" data-toggle="modal" vaccine-id={{$value->id}}>Upload Image</a>
-                <a href="{{asset('')}}admin/vaccine/edit/{{$value->id}}" class="btn btn-sm btn-warning">Edit</a>
+                <a class="btn btn-sm btn-primary add-img" href="#modal-img" data-toggle="modal" vaccine-id={{$value->id}}>Cập nhật ảnh</a>
+                <a href="{{asset('')}}admin/vaccine/edit/{{$value->id}}" class="btn btn-sm btn-warning">Sửa</a>
               </td>
             </tr>
             @endforeach

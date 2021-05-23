@@ -10,7 +10,7 @@ use App\Http\Requests\UpdateVaccineRequest;
 class VaccineController extends Controller
 {
 	public function allVaccine() {
-		$vaccines = Vaccine::paginate(10);
+		$vaccines = Vaccine::orderBy('active', 'DESC')->paginate(10);
 		return view('admin.vaccine.vaccine', ['vaccines' => $vaccines]);
 	}
 
@@ -57,4 +57,25 @@ class VaccineController extends Controller
 		$vaccines = Vaccine::where('active', '=', 1)->paginate(10);
 		return view('pages.vaccine', ['vaccines' => $vaccines]);
 	}
+
+	// import update quantity
+	public function importVaccine() {
+		$vaccines = Vaccine::where('active', 1)->get();
+		return view('admin.vaccine.import_vaccine', ['vaccines' => $vaccines]);
+	} 
+	public function import(Request $req) {
+		$quantity = $req->quantity;
+		$vaccines = $req->vaccine;
+		// vaccine && quantity is array have same index
+		// if quantity != 0 => import
+		for ($i = 0; $i < count($vaccines); $i++) {
+			if ($quantity[$i] != 0) {
+				// update quantity
+				$vaccine = Vaccine::find($vaccines[$i]);
+				$vaccine->quantity = $vaccine->quantity + $quantity[$i];
+				$vaccine->save();
+			}
+		}
+		return redirect()->route('admin.import')->with('success', 'Cập nhật số lượng vaccine thành công.');
+	} 
 }

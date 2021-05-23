@@ -30,6 +30,7 @@ Route::get('vaccine', 'VaccineController@getVaccine')->name('vaccine');
 Route::post('/upload', 'VaccineController@uploadImg');
 Route::get('vaccine-register', 'CustomerController@registerView');
 Route::post('post-register', 'CustomerController@registerPost');
+Route::post('post-template', 'CustomerController@templatePost');
 Route::get('get-register', 'CustomerController@registerGet');
 // Auth::routes(['register' => false]);
 // Auth::routes();
@@ -48,6 +49,10 @@ Route::group(['middleware'=>'auth'], function(){
 			Route::post('store', 'VaccineController@store');
 			Route::get('/edit/{id}', 'VaccineController@edit');
 			Route::post('/update/{id}', 'VaccineController@update');
+		});
+		Route::prefix('import-vaccine')->group(function(){
+			Route::get('/', 'VaccineController@importVaccine')->name('admin.import');
+			Route::post('/import', 'VaccineController@import')->name('admin.vaccine.import');
 		});
 		Route::prefix('post')->group(function(){
 			Route::get('', 'PostController@getPost');
@@ -75,6 +80,15 @@ Route::group(['middleware'=>'auth'], function(){
 			Route::get('/edit/{id}', 'UserController@edit');
 			Route::post('/update/{id}', 'UserController@update');
 			Route::delete('/delete/{id}', 'UserController@delete');
+		});
+		Route::prefix('template')->group(function(){
+			Route::get('/', 'TemplateController@index')->name('admin.template');
+			Route::get('/add', 'TemplateController@addTemplate')->name('admin.template.add');
+			Route::post('/add-template', 'TemplateController@add')->name('admin.template.addnew');
+			Route::post('/save-template', 'TemplateController@save')->name('admin.template.save');
+			Route::get('/{id}/view', 'TemplateController@view')->name('admin.template.view');
+			Route::get('/{id}/edit', 'TemplateController@edit')->name('admin.template.edit');
+			Route::get('/{order_id}/answer-template-view', 'TemplateController@answerTemplateView')->name('admin.template.answerTemplate');
 		});
 	});
 });

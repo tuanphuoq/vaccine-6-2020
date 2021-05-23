@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Vaccine;
+use App\Template;
+use App\Question;
 use App\Order;
+use App\Answer;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -11,7 +14,10 @@ class CustomerController extends Controller
     function registerView()
     {
     	$vaccines = Vaccine::all();
-    	return view('pages.vaccine-register')->with(compact('vaccines'));
+		$templateID = 1;
+		$template = Template::find($templateID);
+		$template->questions = Question::where('template_id', $templateID)->get();
+    	return view('pages.vaccine-register')->with(compact('vaccines', 'template'));
     }
 
     function registerPost(request $req)
@@ -23,12 +29,33 @@ class CustomerController extends Controller
     	$order['customer_email'] = $req->customerEmail;
     	$order['customer_phone'] = $req->customerPhone;
     	$order['quantity'] = $req->quantity;
+    	$order['join_date'] = date('d-m-Y', strtotime($req->vaccineDate));
+    	$order['join_time'] = $req->vaccineTime.":00";
         $price = Vaccine::find($req->vaccineId)->reser_price;
     	$order['total'] = ($req->quantity)*$price;
     	$order['state'] = $req->state;
-    	$codeReturn = Order::max('id') + 1;
-    	Order::Create($order);
+		dd($order);
+    	$obj = Order::Create($order);
+    	$codeReturn = $obj->id;
     	return response()->json(['code' => $codeReturn, 'total' => $req->total]);
+    }
+
+    function templatePost(request $req)
+    {
+		foreach ($req->arr as $item) {
+			if ($item['answer'] != "") {
+				$orderTemplate = [
+					'order_id' => $req->orderID,
+					'template_id' => $req->templateID,
+					'question_id' => $item['question'],
+					'answer' => $item['answer']
+				];
+				Answer::create($orderTemplate);
+			} else {
+				return response()->json(['status' => false]);
+			}
+		}
+		return response()->json(['status' => true]);
     }
 
     function registerGet(request $req)
