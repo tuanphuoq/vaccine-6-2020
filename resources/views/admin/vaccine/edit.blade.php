@@ -4,34 +4,34 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h2 style="text-align: center;">Edit vaccine</h2>
+        <h2 style="text-align: center;">Cập nhật thông tin vaccine</h2>
       </div>
       <div class="box-body">
         <div class="container">
           <form  method="POST" >
             @csrf
             <div class="form-group">
-              <label for="">Name</label>
+              <label for="">Tên vaccine</label>
               <input type="text" class="form-control" id="name" placeholder="Name" value="{{$vaccine->name}}">
             </div>
             <div class="form-group">
-              <label for="">Origin</label>
+              <label for="">Nguồn gốc</label>
               <input type="text" class="form-control" id="origin" placeholder="Origin" value="{{$vaccine->origin}}">
             </div>
             <div class="form-group">
-              <label for="">Allocate</label>
+              <label for="">Chỉ định</label>
               <input type="text" class="form-control" id="allocate" placeholder="Allocate" value="{{$vaccine->allocate}}">
             </div>
             <div class="form-group">
-              <label for="">Reser Price</label>
+              <label for="">Giá đăng ký sớm</label>
               <input type="text" class="form-control" id="reser_price" placeholder="Reser Price" value="{{$vaccine->reser_price}}">
             </div>
             <div class="form-group">
-              <label for="">Late Price</label>
+              <label for="">Giá đăng ký trực tiếp</label>
               <input type="text" class="form-control" id="late_price" placeholder="Late Price" value="{{$vaccine->late_price}}">
             </div>
             <div class="form-group">
-              <label for="">Active</label>
+              <label for="">Trạng thái</label>
               <select name="active" id="active" class="form-control" required="required" style="width: 50%;" value="{{$vaccine->active}}">
                 @if(old('active', $vaccine->active) == 1 )
                 <option value="1" selected="">Đang được sử dụng</option>
@@ -44,7 +44,8 @@
              
             </div>
           </form>
-          <button class="btn btn-primary edit-vaccine">Edit</button>
+          <button class="btn btn-primary edit-vaccine">Cập nhật</button>
+          <a href="{{asset('')}}admin/vaccine" class="btn btn-secondary">Trở về</a>
         </div>
       </div>
     </div>

@@ -4,27 +4,28 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h2 style="text-align: center;">Edit user</h2>
+        <h2 style="text-align: center;">Cập nhật người dùng hệ thống</h2>
       </div>
       <div class="box-body">
         <div class="container">
           <form  method="POST" >
             @csrf
             <div class="form-group">
-              <label for="">Name</label>
+              <label for="">Tên người dùng</label>
               <input type="text" class="form-control" id="fullname" placeholder="Name" value="{{$user->fullname}}">
             </div>
             <div class="form-group">
-              <label for="">Address</label>
+              <label for="">Địa chỉ</label>
               <input type="text" class="form-control" id="address" placeholder="Address" value="{{$user->address}}">
             </div>
             <div class="form-group">
-              <label for="">Phone</label>
+              <label for="">Số điện thoại liên lạc</label>
               <input type="text" class="form-control" id="phone" placeholder="Phone" value="{{$user->phone}}">
             </div>
             
           </form>
-          <button class="btn btn-primary edit-user">Edit</button>
+          <button class="btn btn-primary edit-user">Cập nhật</button>
+          <a href="{{asset('')}}admin/user" class="btn btn-secondary">Quay lại</a>
         </div>
       </div>
     </div>

@@ -64,6 +64,7 @@
             </div>
             <div class="form-group col-md-12 mt-5 text-center">
                 <button type="submit" style="margin-left: 15px;" class="btn btn-success">Thực hiện bổ sung vaccine</button>
+                <a href="{{asset('')}}admin/vaccine" class="btn btn-primary">Đi tới trang quản lý vaccine</a>
             </div>
           </form>
         </div>

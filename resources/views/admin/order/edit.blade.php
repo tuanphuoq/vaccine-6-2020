@@ -4,30 +4,30 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h2 style="text-align: center;">Edit order</h2>
+        <h2 style="text-align: center;">Cập nhật đơn đăng ký</h2>
       </div>
       <div class="box-body">
         <div class="container">
           <form  method="POST" >
             @csrf
             <div class="form-group">
-              <label for="">Customer Name</label>
-              <input type="text" class="form-control" id="customer_name" placeholder="Customer Name" value="{{$order->customer_name}}">
+              <label for="">Tên khách hàng</label>
+              <input type="text" class="form-control" id="customer_name" placeholder="Nhập tên khách hàng" value="{{$order->customer_name}}">
             </div>
             <div class="form-group">
-              <label for="">Customer Address</label>
-              <input type="text" class="form-control" id="customer_address" placeholder="Customer Address" value="{{$order->customer_address}}">
+              <label for="">Địa chỉ khách hàng</label>
+              <input type="text" class="form-control" id="customer_address" placeholder="Nhập địa chỉ khách hàng" value="{{$order->customer_address}}">
             </div>
             <div class="form-group">
-              <label for="">Customer Phone</label>
-              <input type="text" class="form-control" id="customer_phone" name="customer_phone"placeholder="Customer Phone" value="{{$order->customer_phone}}">
+              <label for="">Số điện thoại liên lạc</label>
+              <input type="text" class="form-control" id="customer_phone" name="customer_phone"placeholder="Nhập số điện thoại" value="{{$order->customer_phone}}">
             </div>
             <div class="form-group">
-              <label for="">Customer Email</label>
-              <input type="text" class="form-control" id="customer_email" placeholder="Customer Email" value="{{$order->customer_email}}">
+              <label for="">Email</label>
+              <input type="text" class="form-control" id="customer_email" placeholder="Nhập email khách hàng" value="{{$order->customer_email}}">
             </div>
             <div class="form-group">
-              <label for="">Vaccine</label>
+              <label for="">Vaccine đăng ký</label>
                <select name="" id="vaccine" class="form-control" style="width: 50%;">
                 @if (count($vaccines) > 0)
                 @foreach ($vaccines as $vaccine)
@@ -37,11 +37,12 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="">Quantity</label>
-              <input type="text" class="form-control" id="quantity" placeholder="Late Price" value="{{$order->quantity}}">
+              <label for="">Số lượng</label>
+              <input type="text" class="form-control" id="quantity" placeholder="Nhập số lượng" value="{{$order->quantity}}">
             </div>
           </form>
-          <button class="btn btn-primary">Edit</button>
+          <button class="btn btn-primary">Cập nhật</button>
+          <a href="{{asset('')}}admin/order" class="btn btn-secondary">Quay lại</a>
         </div>
       </div>
     </div>

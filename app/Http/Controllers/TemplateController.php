@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Template;
 use App\Question;
+use App\Answer;
+use App\Order;
+use App\Vaccine;
 use Illuminate\Http\Request;
 use DB;
 
@@ -84,9 +87,23 @@ class TemplateController extends Controller
         }
     }
 
-    public function answerTemplateView($orderID)
+    public function answerTemplateView($orderID, $templateID = 1)
     {
-        $answers = Answer::where('order_id', $orderID)->get();
-        if 
+        $order = Order::find($orderID);
+        if ($order != null) {
+            $answerArr = array();
+            $answers = Answer::where('order_id', $orderID)->where('template_id', $templateID)->get();
+            $order->vaccine_name = Vaccine::find($order->vaccine_id)->value('name')." - ".Vaccine::find($order->vaccine_id)->value('allocate');
+            $question = Question::all()->keyBy('id');
+            foreach ($answers as $item) {
+                $tempArr['question'] = $question[$item['question_id']]->question;
+                $tempArr['answer'] = $item['answer'];
+                array_push($answerArr, $tempArr);
+            }
+            $order->template = $answerArr;
+            return view('admin.order.view', ['order' => $order]);
+        } else {
+            return view('admin.order.view');
+        }
     }
 }

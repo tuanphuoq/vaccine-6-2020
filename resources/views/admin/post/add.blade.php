@@ -4,27 +4,28 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h2 style="text-align: center;">Add post</h2>
+        <h2 style="text-align: center;">Tạo mới bài viết - thông tin</h2>
       </div>
       <div class="box-body">
         <div class="container">
           <form  method="POST" >
             @csrf
             <div class="form-group">
-              <label for="">Title</label>
+              <label for="">Tiêu đề</label>
               <input type="text" class="form-control" id="title" placeholder="Title">
             </div>
             <div class="form-group">
-              <label for="">Description</label>
+              <label for="">Mô tả ngắn</label>
               <input type="text" class="form-control" id="description" placeholder="Description">
             </div>
             <div class="form-group">
-              <label for="">Content</label>
+              <label for="">Nội dung</label>
               <textarea name="content" id="editor1" rows="10" cols="80"  class="form-control">
               </textarea>
             </div>
           </form>
-          <button class="btn btn-primary">Add</button>
+          <button class="btn btn-primary">Tạo mới</button>
+          <a href="{{asset('')}}admin/post" class="btn btn-secondary">Quay lại</a>
         </div>
       </div>
     </div>

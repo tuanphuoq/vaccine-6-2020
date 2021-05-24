@@ -61,3 +61,15 @@
 .template-section{
     border : 1px solid gray;
 }
+#fast-check-section{
+    position: relative;
+}
+#fast-check-section a{
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.not-show{
+    display: none;
+    visibility: hidden;
+}

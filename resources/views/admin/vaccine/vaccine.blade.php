@@ -16,11 +16,11 @@
               <th>Tên vaccine</th>
               <th>Nguồn gốc</th>
               <th>Chỉ định</th>
-              <th>Reser Price</th>
-              <th>Late Price</th>
+              <th>Giá đăng ký sớm</th>
+              <th>Giá đăng ký trực tiếp</th>
               <th>Số lượng</th>
               <th>Trạng thái</th>
-              <th>Ảnh minh họa</th>
+              <th>Ảnh sản phẩm</th>
               <th>Tác vụ</th>
             </tr>
           </thead>

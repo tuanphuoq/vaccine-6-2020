@@ -7,18 +7,18 @@
         <h3 class="box-title">Quản lý người dùng hệ thống</h3>
       </div>
       <div class="box-body">
-       <a href="{{asset('')}}admin/user/create" class="btn btn-sm btn-success">Add</a>
+       <a href="{{asset('')}}admin/user/create" class="btn btn-sm btn-success">Tạo mới người dùng hệ thống</a>
        <div class="table-responsive">
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
               <th>#</th>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Phone</th>
+              <th>Tên người dùng</th>
+              <th>Địa chỉ</th>
+              <th>Số điện thoại</th>
               <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
+              <th>Phân quyền hệ thống</th>
+              <th>Tác vụ</th>
             </tr>
           </thead>
           <tbody>
@@ -37,11 +37,11 @@
             @endif
            <td>
              @if($user->role != 1)
-              <a class="btn btn-success btn-change" data-toggle="modal" href='#modal-id' data-id="{{$user->id}}">Change Role</a>
+              <a class="btn btn-success btn-change" data-toggle="modal" href='#modal-id' data-id="{{$user->id}}">Thay đổi quyền</a>
               @endif
-             <a href="{{asset('')}}admin/user/edit/{{$user->id}}" class="btn btn-warning">Edit</a>
+             <a href="{{asset('')}}admin/user/edit/{{$user->id}}" class="btn btn-warning">Cập nhật</a>
              @if($user->role != 1)
-             <button class="btn btn-danger btn-delete" data-id={{$user->id}}>Delete</button>
+             <button class="btn btn-danger btn-delete" data-id={{$user->id}}>Xóa</button>
              @endif
            </td>
            </tr>
@@ -62,19 +62,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Change Role</h4>
+        <h4 class="modal-title">Thay đổi quyền hệ thống</h4>
       </div>
       <div class="modal-body">
        <form method="POST">
         @csrf
           <select name="" id="state" class="form-control" required="required">
-          <option value="0" class="yes">Employee</option>
+          <option value="0" class="yes">Nhân viên</option>
           <option value="1" class="no">Super Admin</option>
         </select>
        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-save">Save changes</button>
+        <button type="button" class="btn btn-primary btn-save">Lưu thay đổi</button>
       </div>
     </div>
   </div>

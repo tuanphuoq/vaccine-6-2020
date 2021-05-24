@@ -7,15 +7,15 @@
         <h3 class="box-title">Quản lý trang thông tin</h3>
       </div>
       <div class="box-body">
-       <a href="{{asset('')}}admin/post/create" class="btn btn-sm btn-success">Add</a>
+       <a href="{{asset('')}}admin/post/create" class="btn btn-sm btn-success">Tạo mới bài viết - thông tin</a>
        <div class="table-responsive">
         <table class="table table-hover table-responsive">
           <thead>
             <tr>
               <th>#</th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Action</th>
+              <th>Tiêu đề thông tin</th>
+              <th>Mổ tả ngắn</th>
+              <th>Tác vụ</th>
             </tr>
           </thead>
           <tbody>
@@ -26,8 +26,8 @@
               <td>{{$value->title}}</td>
               <td>{{$value->description}}</td>
               <td>
-                <a href="{{asset('')}}admin/post/edit/{{$value->id}}" class="btn btn-sm btn-warning">Edit</a>
-                <a href="{{asset('')}}admin/post/delete/{{$value->id}}" class="btn btn-sm btn-danger" data-id="{{$value->id}}">Delete</a>
+                <a href="{{asset('')}}admin/post/edit/{{$value->id}}" class="btn btn-sm btn-warning">Cập nhật</a>
+                <a href="{{asset('')}}admin/post/delete/{{$value->id}}" class="btn btn-sm btn-danger" data-id="{{$value->id}}">Xóa</a>
               </td>
             </tr>
             @endforeach
