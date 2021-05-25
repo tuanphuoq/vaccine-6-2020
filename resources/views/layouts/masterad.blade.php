@@ -46,9 +46,9 @@
                   </p>
                 </li>
                 <li class="user-footer">
-                  {{-- <div class="pull-left">
-                    <a class="btn btn-default btn-flat">Profile</a>
-                  </div> --}}
+                  <div class="pull-left">
+                    <a class="btn btn-default btn-flat" href="{{route('changepassword')}}">Đổi mật khẩu</a>
+                  </div>
                   <div class="pull-right">
                     <a href="{{route('logout')}}" class="btn btn-default btn-flat" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">Đăng xuất</a>

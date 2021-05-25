@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class UserController extends Controller
 {
@@ -85,5 +86,37 @@ class UserController extends Controller
 		return response()->json([
 			'message' => 'Xoa thanh cong'
 		]);
+	}
+
+	public function changePassword()
+	{
+		return view('admin.user.password');
+	}
+
+	public function savePassword(Request $req)
+	{
+		// dd($req->all());
+		if ($req->oldPass == "") {
+            $message = "Mật khẩu cũ không được để trống";
+			return redirect()->route('changepassword')->with('error', $message);
+        } else if ($req->newPass == "" || $req->rePass == "") {
+            $message = "Mật khẩu mới và mật khẩu xác nhận không được để trống";
+			return redirect()->route('changepassword')->with('error', $message);
+        } else if ($req->newPass != $req->rePass) {
+            $message = "Xác nhận mật khẩu không đúng";
+			return redirect()->route('changepassword')->with('error', $message);
+        } else {
+            if (Auth::user()->password == Hash::make($req->oldPass)) {
+				$user = User::find(Auth::user()->id);
+				$user->password = Hash::make($req->newPass);
+				$user->save();
+				$message = "Cập nhật mật khẩu thành công";
+				// success
+				return redirect()->route('changepassword')->with('success', $message);
+			} else {
+				$message = "Sai mật khẩu để cập nhật mật khẩu mới";
+				return redirect()->route('changepassword')->with('error', $message);
+			}
+        }
 	}
 }

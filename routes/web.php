@@ -80,6 +80,8 @@ Route::group(['middleware'=>'auth'], function(){
 			Route::get('/edit/{id}', 'UserController@edit');
 			Route::post('/update/{id}', 'UserController@update');
 			Route::delete('/delete/{id}', 'UserController@delete');
+			Route::get('/change-password', 'UserController@changePassword')->name('changepassword');
+			Route::post('/save-password', 'UserController@savePassword')->name('savepassword');
 		});
 		Route::prefix('template')->group(function(){
 			Route::get('/', 'TemplateController@index')->name('admin.template');
