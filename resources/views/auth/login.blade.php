@@ -25,7 +25,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Đăng nhập để truy cập hệ thống</p>
 
         <form action="{{ route('login') }}" method="post">
          @csrf
@@ -38,7 +38,7 @@
         </span>
         @enderror
         <div class="form-group has-feedback">
-            <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">
+            <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mật khẩu" name="password">
         </div>
         @error('password')
         <span class="has-feedback" role="alert">
@@ -47,7 +47,7 @@
         @enderror
         <div class="row">
             <div class="col-xs-12">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
           </div>
           <!-- /.col -->
       </div>

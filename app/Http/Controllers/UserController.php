@@ -106,7 +106,8 @@ class UserController extends Controller
             $message = "Xác nhận mật khẩu không đúng";
 			return redirect()->route('changepassword')->with('error', $message);
         } else {
-            if (Auth::user()->password == Hash::make($req->oldPass)) {
+            // if (Auth::user()->password == Hash::make($req->oldPass)) {
+            if (Hash::check($req->oldPass, Auth::user()->password)) {
 				$user = User::find(Auth::user()->id);
 				$user->password = Hash::make($req->newPass);
 				$user->save();

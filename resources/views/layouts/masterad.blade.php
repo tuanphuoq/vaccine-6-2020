@@ -76,11 +76,13 @@
         </div>
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">Danh sách chức năng</li>
+          @if (Auth::user()->role == 1)
           <li class="">
             <a href="{{asset('')}}admin/user">
               <i class="fa fa-users" aria-hidden="true"></i> <span>Quản lý người dùng</span>
             </a>
           </li>
+          @endif
           <li class="treeview">
             <a>
               <i class="fa fa-eyedropper" aria-hidden="true"></i> <span>Quản lý Vaccine</span>
@@ -108,11 +110,13 @@
               <i class="fa fa-cart-plus" aria-hidden="true"></i> <span>Đăng ký tiêm chủng</span>
             </a>
           </li>
+          @if (Auth::user()->role == 1)
           <li class="">
             <a href="{{asset('')}}admin/import-vaccine">
               <i class="fa fa-plus-circle" aria-hidden="true"></i> <span>Bổ sung vaccine</span>
             </a>
           </li>
+          @endif
           <li class="">
             <a href="{{asset('')}}admin/template">
               <i class="fa fa-file-text" aria-hidden="true"></i> <span>Mẫu khai báo</span>
