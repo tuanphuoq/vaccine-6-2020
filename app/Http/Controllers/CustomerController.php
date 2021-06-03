@@ -34,7 +34,6 @@ class CustomerController extends Controller
         $price = Vaccine::find($req->vaccineId)->reser_price;
     	$order['total'] = ($req->quantity)*$price;
     	$order['state'] = $req->state;
-		dd($order);
     	$obj = Order::Create($order);
     	$codeReturn = $obj->id;
     	return response()->json(['code' => $codeReturn, 'total' => $req->total]);

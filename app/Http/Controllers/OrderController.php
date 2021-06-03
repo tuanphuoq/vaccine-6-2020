@@ -18,7 +18,6 @@ class OrderController extends Controller
 		foreach ($orders as $item) {
 			$item->isAnswer = Answer::where('order_id', $item->id)->count() > 0 ? true : false;
 		}
-		// dd($orders);
 		return view('admin.order.order', ['orders' => $orders]);
 	}
 

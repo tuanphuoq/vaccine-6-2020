@@ -95,7 +95,6 @@ class UserController extends Controller
 
 	public function savePassword(Request $req)
 	{
-		// dd($req->all());
 		if ($req->oldPass == "") {
             $message = "Mật khẩu cũ không được để trống";
 			return redirect()->route('changepassword')->with('error', $message);
