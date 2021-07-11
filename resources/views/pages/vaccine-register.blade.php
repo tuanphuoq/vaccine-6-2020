@@ -172,6 +172,7 @@
         })
         $('#vaccineDate').datepicker({
             uiLibrary: 'bootstrap',
+            dateFormat : 'd-m-yyyy'
         });
     </script>
 @endsection

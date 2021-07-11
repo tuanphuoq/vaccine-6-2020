@@ -218,6 +218,34 @@ function resetText(elementArr) {
     }
 }
 
+// check time register
+$('input[name=vaccineTime]').change(function() {
+    if ($(this).val() != "") {
+        date = $('input[name=vaccineDate]').val()
+        if (date == "") {
+            $(this).after('<div class="text-danger">Vui lòng chọn ngày tiêm chủng.</div>')
+        } else {
+            var data1 = {
+                'time' : $(this).val(),
+                'date' : date
+            }
+            $.ajax({
+                type: "GET",
+                url: "/check-date-time",
+                data: data1,
+                success: function (response) {
+                    console.log(response);
+                    if (response.status == false) {
+                        // Swal.fire('Khai báo y tế thành công.')
+                        let html = '<div class="text-danger">'+response.message+'</div>'
+                        $('#help-quantity').after(html)
+                    }
+                }
+            })
+        }
+    }
+})
+
 //price
 $('#quantity').change(function (argument) {
     let price = $('#vaccine-register').find(':selected').attr('price');

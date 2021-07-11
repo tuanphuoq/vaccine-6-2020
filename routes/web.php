@@ -33,6 +33,7 @@ Route::get('vaccine-register', 'CustomerController@registerView');
 Route::post('post-register', 'CustomerController@registerPost');
 Route::post('post-template', 'CustomerController@templatePost');
 Route::get('get-register', 'CustomerController@registerGet');
+Route::get('check-date-time', 'OrderController@checkDateTime');
 // Auth::routes(['register' => false]);
 // Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -41,11 +42,9 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware'=>'auth'], function(){
 	Route::prefix('admin')->group(function(){
-		Route::get('/', function(){
-			return view('admin.dashboard');
-		});
+		Route::get('', 'AdminController@index');
 		Route::prefix('vaccine')->group(function(){
-			Route::get('', 'VaccineController@allVaccine');
+			Route::get('', 'VaccineController@allVaccine')->name('admin.vaccine');
 			Route::get('create', 'VaccineController@create');
 			Route::post('store', 'VaccineController@store');
 			Route::get('/edit/{id}', 'VaccineController@edit');
@@ -56,7 +55,7 @@ Route::group(['middleware'=>'auth'], function(){
 			Route::post('/import', 'VaccineController@import')->name('admin.vaccine.import');
 		});
 		Route::prefix('post')->group(function(){
-			Route::get('', 'PostController@getPost');
+			Route::get('', 'PostController@getPost')->name('admin.post');
 			Route::get('create', 'PostController@create');
 			Route::post('store', 'PostController@store');
 			Route::get('/edit/{id}', 'PostController@edit');
@@ -64,7 +63,7 @@ Route::group(['middleware'=>'auth'], function(){
 			Route::delete('/delete/{id}', 'PostController@delete');
 		});
 		Route::prefix('order')->group(function(){
-			Route::get('', 'OrderController@getOrder');
+			Route::get('', 'OrderController@getOrder')->name('admin.order');
 			Route::get('/change/{id}', 'OrderController@changeState');
 			Route::post('/change/update/{id}', 'OrderController@updateState');
 			Route::get('create', 'OrderController@create');

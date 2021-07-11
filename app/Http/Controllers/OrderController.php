@@ -33,6 +33,13 @@ class OrderController extends Controller
 		$state = Order::find($id);
 		$state->user_id = Auth::user()->id;
 		$state->state = $request->change;
+		// update quantity 
+		if ($request->change == 1) {
+			$vaccine = Vaccine::find($state->vaccine_id);
+			$vaccine->quantity -= $state->quantity;
+			$vaccine->save(); 
+		}
+		// change status for order
 		$state->save();
 		return response()->json([
 			'message' =>false
@@ -98,5 +105,22 @@ class OrderController extends Controller
 		$data['total'] = $price*($request->quantity);
 		$data['state'] = 0;
 		return Order::find($id)->update($data);
+	}
+
+	public function checkDateTime(Request $req)
+	{
+		$date = date('d-m-Y', strtotime($req->date));;
+		$time = $req->time.":00";
+		$quantity = Order::where('join_date', $date)->where('join_time', $time)->count();
+		if ($quantity > 0) {
+			return response()->json([
+				'status' => false,
+				'message' => "Thời gian đăng ký tiêm chủng [".$req->date." - ".$req->time.":00] đã vượt quá số lượng đăng ký cho phép. Vui lòng chọn ngày hoặc giờ khác"
+			]);
+		} else {
+			return response()->json([
+				'status' => true
+			]);
+		}
 	}
 }

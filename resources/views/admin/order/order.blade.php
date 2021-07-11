@@ -14,7 +14,7 @@
            <a link="{{asset('')}}admin/template/{order_id}/answer-template-view" class="btn btn-primary" target="_blank" id="see-info">Xem thông tin</a>
        </div>
        <div class="table-responsive" style="margin-top : 3rem;">
-        <table class="table table-hover table-responsive">
+        <table class="table table-hover table-responsive" id="datatable">
           <thead>
             <tr>
               <th>Mã</th>
@@ -60,9 +60,11 @@
                @endif
               </td>
               @if ($value->state == 0)
-              <td>Chưa thanh toán</td>
-              @else
-              <td>Đã thanh toán</td>
+              <td class="text-warning" style="font-weight : bold">Chưa thanh toán</td>
+              @elseif ($value->state == 1)
+              <td class="text-success" style="font-weight : bold">Đã thanh toán</td>
+              @elseif ($value->state == 2)
+              <td class="text-danger" style="font-weight : bold">Hủy đăng ký</td>
               @endif
               <td>
               <a class="btn btn-warning btn-change" data-toggle="modal" href='#modal-id' data-id="{{$value->id}}">Cập nhật trạng thái</a>
@@ -92,6 +94,7 @@
           <select name="" id="state" class="form-control" required="required">
           <option value="0" class="no">Chưa thanh toán</option>
           <option value="1" class="yes">Đã thanh toán</option>
+          <option value="2" class="yes">Hủy đăng ký</option>
         </select>
        </form>
       </div>
@@ -107,6 +110,9 @@
 @section('foot')
 
 <script type="text/javascript">
+  $(document).ready( function () {
+    $('#datatable').DataTable();
+  });
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

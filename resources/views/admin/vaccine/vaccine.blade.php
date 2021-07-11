@@ -7,9 +7,9 @@
         <h3 class="box-title">Quản lý vaccine</h3>
       </div>
       <div class="box-body">
-       <a href="{{asset('')}}admin/vaccine/create" class="btn btn-sm btn-success">Thêm mới vaccine</a>
+       <a href="{{asset('')}}admin/vaccine/create" class="btn btn-sm btn-success" style="margin-bottom: 1rem;">Thêm mới vaccine</a>
        <div class="table-responsive">
-        <table class="table table-hover table-responsive">
+        <table class="table table-hover table-responsive" id="datatable">
           <thead>
             <tr>
               <th>#</th>
@@ -87,7 +87,10 @@
 @endsection
 @section('foot')
 <script type="text/javascript">
-   $("#file-1").fileinput({
+  $(document).ready( function () {
+    $('#datatable').DataTable();
+  });
+  $("#file-1").fileinput({
     theme: 'fa',
     uploadUrl: "/upload",
     uploadExtraData: function() {

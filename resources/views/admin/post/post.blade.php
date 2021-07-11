@@ -7,9 +7,9 @@
         <h3 class="box-title">Quản lý trang thông tin</h3>
       </div>
       <div class="box-body">
-       <a href="{{asset('')}}admin/post/create" class="btn btn-sm btn-success">Tạo mới bài viết - thông tin</a>
+       <a href="{{asset('')}}admin/post/create" class="btn btn-sm btn-success" style="margin-bottom: 1rem;">Tạo mới bài viết - thông tin</a>
        <div class="table-responsive">
-        <table class="table table-hover table-responsive">
+        <table class="table table-hover table-responsive" id="datatable">
           <thead>
             <tr>
               <th>#</th>
@@ -45,6 +45,9 @@
 @section('foot')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
+  $(document).ready( function () {
+    $('#datatable').DataTable();
+  });
    $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
