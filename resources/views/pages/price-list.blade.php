@@ -12,11 +12,28 @@
 <div class="col-md-8 col-sm-12 col-xs-12 news-detail">
 <div class="clearfix"></div>
 <div class="hiden-over content-clear" id="NewsContent">
-​<img alt="" data-cke-saved-src="https://imgur.com/eGpwsWs" src="https://imgur.com/eGpwsWs">​<img alt="" style="width: 636px; height: 1153px; border-width: 1px; border-style: solid; margin: 1px;" data-cke-saved-src="Images/Upload/User/quantri/2019/5/bang_gia.png" src="Images/Upload/User/quantri/2019/5/bang_gia.png">​​​<br><br><br>​<br><br><br><br><br>
+    <h2 class="text-center text-uppercase font-weight-bold">Bảng giá vaccine tiêm phòng tại trung tâm tiêm chủng</h2>
+    <br>
+    <h3 class="text-center text-uppercase font-weight-bold">được áp dụng từ ngày : {{$list[0]->updated_at->format('d-m-Y')}}</h3>
+    <table class="table-bordered table">
+        <thead>
+            <tr>
+                <th>Tên vaccine</th>
+                <th>Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($list as $item)    
+            <tr>
+                <td>{{$item->name}}</td>
+                <td>{{number_format($item->reser_price)}} VND</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 <div class="clear">
 </div>
-<hr />
 <div class="clear">
 </div>
 <div class="clear">

@@ -16,8 +16,9 @@
               <th>Tên vaccine</th>
               <th>Nguồn gốc</th>
               <th>Chỉ định</th>
-              <th>Giá đăng ký sớm</th>
-              <th>Giá đăng ký trực tiếp</th>
+              {{-- <th>Giá đăng ký sớm</th>
+              <th>Giá đăng ký trực tiếp</th> --}}
+              <th>Giá vaccine</th>
               <th>Số lượng</th>
               <th>Trạng thái</th>
               <th>Ảnh sản phẩm</th>
@@ -32,8 +33,9 @@
               <td>{{$value->name}}</td>
               <td>{{$value->origin}}</td>
               <td>{{$value->allocate}}</td>
+              {{-- <td>{{number_format($value->reser_price)}} VND</td>
+              <td>{{number_format($value->late_price)}} VND</td> --}}
               <td>{{number_format($value->reser_price)}} VND</td>
-              <td>{{number_format($value->late_price)}} VND</td>
               @if (isset($value->quantity) && $value->quantity < 100)
               <td style="color: red;">
               @else

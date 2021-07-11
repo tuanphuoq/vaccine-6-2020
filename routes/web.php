@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Vaccine;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('', function() {
 });
 
 Route::get('price-list', function() {
-	return view('pages.price-list');
+	return view('pages.price-list', ['list' => Vaccine::get()]);
 });
 Route::get('news', 'PostController@allPost');
 Route::get('news/{id}', 'PostController@show');
